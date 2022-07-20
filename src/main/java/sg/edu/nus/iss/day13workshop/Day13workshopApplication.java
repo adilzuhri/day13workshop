@@ -24,12 +24,16 @@ public class Day13workshopApplication implements ApplicationRunner {
 	public void run(ApplicationArguments args) {
 		if (args.containsOption("dataDir")) {
 			final String dataDir = args.getOptionValues("dataDir").get(0);
+			dbSvc.setDataDir(new File(dataDir));
 
-			System.out.printf("Using %s as data diretory\n", dataDir);
+			if (!dbSvc.isDataDirValid()) {
+				System.err.printf("%s does not exist, is not a directory or not writable.", dataDir);
+				System.exit(-1);
+			}
 
-			}else{
-				dbSvc.setDataDir(new File("./data"));
-
+			System.out.printf("Using %s as data directory\n", dataDir);
+		}else {
+			dbSvc.setDataDir(new File("./data"));
 			}
 	}
 
