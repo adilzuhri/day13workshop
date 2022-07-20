@@ -33,13 +33,6 @@ public class Day13workshopApplication implements ApplicationRunner {
 			}
 	}
 
-	public boolean save() {
-		return false;
-
-	}
-
-	public void read(String fileId) {
-		
-	}
+	
 
 }

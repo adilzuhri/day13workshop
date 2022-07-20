@@ -7,8 +7,6 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-import javax.swing.text.StyledEditorKit;
-
 import org.springframework.stereotype.Service;
 
 import sg.edu.nus.iss.day13workshop.models.Contact;
@@ -70,5 +68,5 @@ public class DatabaseService {
             return null;
 		
 	}
-
+    }
 }
